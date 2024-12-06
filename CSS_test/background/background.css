@@ -1,0 +1,47 @@
+
+
+.background{
+    background-image: url("1.png");
+    background-repeat: repeat;
+    background-position:top;
+    background-attachment: scroll;
+    background-size:5px;
+}
+两者相同
+.background1{
+    background：redurl("1.png") no-repeat 5% scroll;
+}
+
+.background2{
+    background-image: url("1.png") no-repeat left top,
+    url("2.png") no-repeat right top,
+    url("3.jfif") no-repeat right bottom,
+    url("4.jfif") no-repeat left bottom,
+    url("5.png") no-repeat left center;
+    /*background-repeat: no-repeat;*/
+}
+
+.div1 {
+    width: 320px;
+    height: 320px;
+    border: 1px solid red;
+    background: url(http://img.smyhvae.com/20191006_1410.png) no-repeat;
+    background-size: cover;
+
+    /* 裁剪出圆形区域 */
+    clip-path: circle(50px at 100px 100px);
+    transition: clip-path .4s;
+}
+.div1:hover{
+    /* 鼠标悬停时，裁剪出更大的圆形 */
+    clip-path: circle(80px at 100px 100px);
+}
+text-decoration:underline 下划线
+.div{
+    width: 100px;
+    height: 100px;
+}
+.linear_gradient{
+linear-gradient(go right,red,blue);
+
+}

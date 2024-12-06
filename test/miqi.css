@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    position: relative;
+    width: 970px;
+    height: 103px;
+    margin: 0 auto;
+}
+top .title {
+    float: right;
+    width: 679px;
+    height: 46px;
+    margin-top: 57px;
+}
+.top .title ul{
+    list-style: none;
+}
+.top .title ul li{
+    float: left;
+    width: 135px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+}
+.top .title ul li a{
+    display: block;
+    width: 135px;
+    height: 46px;
+}
+.top .title ul li a:link, .top .title ul li a:visited{
+    text-decoration: none;
+    background-color: #790098;
+    color: #fff;
+}

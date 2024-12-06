@@ -1,0 +1,186 @@
+Gird 将容器分成了行和列 属于二维布局
+
+采用网格布局的区域 称为容器container 容器内部采用网格定位的子元素 称为项目和item
+<div>
+  <div><p>1</p></div>
+  <div><p>2</p></div>
+  <div><p>3</p></div>
+</div>
+如上端代码 外层的div就为容器  内层的div为项目  项目只为容器的顶层的子元素 p就不算项目
+
+行和列  行row 列column
+
+单元格 行和列交错粗来的区域为 单元格个  一般单元格的数量为 行✖列
+
+网格线 划分网格的线 水平网格线画出行 垂直网格线画出列
+一般 n行有n+1个网格线  m列有m+1个网格线 比如三行有四根网格线
+
+Gird布局分为两种 一种作用在容器上 为容器属性  一种作用在项目上 为项目属性
+
+1.容器属性
+1.display属性 指定一个容器为网格布局
+div{
+    display:gird;
+}
+默认容器元素都是块级元素 但是也可以成为行内元素
+div{
+    display:inline-gird;
+}
+！在容器元素成为网格布局之后容器子元素（项目）的float、display: inline-block、display: table-cell、vertical-align和column-*等设置都将失效。
+
+2.gird-template-rows/column
+.container{
+    display:gird;
+    gird-template-rows:100px 100px 100px;
+    gird-template-columns:100px 100px 100px;
+}
+这样设置了一个三行三列的网格 都是100px 也可以用百分比
+3.repeat(): 重复  一个重复次数 一个是大小
+gird-template-rows:repeat(3 100px 50px 30px)
+这样就出了九行 100px 50px 30px 这样排列
+
+4.auto-fill
+有时单元格大小是确定的 但是容器不确定 那么可以使用auto-fill 尽可能的填满单元格
+.container{
+    display:gird
+    gird-template-rows:repeat(auto-fill 100px);
+}
+auto-fit  和auto-fill差不多 auto-fill会尽可能的填满单元格  而auto-fill会尽可能扩大单元格
+
+fr关键字 为片段  如果有1fr 和 2fr 则说明后者是前面的两倍
+
+比如有500px的div  单元格为200px 1fr 2fr！！！！
+则200px 100px 200px！！！！ 保持怀疑
+
+5.minmax()
+gird-template-rows:1fr 1fr minmax(100px 1fr)不小于100px和1fr
+
+6.auto 表示浏览器自己决定大小
+如gird-template-rows:100px auto 100px
+一般来说第二行的宽度就为该单元格的最大宽度 除非设置了min-width
+
+7.gird-template-rows/columns 还可以加[]表示名字
+.container {
+  display: grid;
+  grid-template-columns: [c1] 100px [c2] 100px [c3] auto [c4];
+  grid-template-rows: [r1] 100px [r2] 100px [r3] auto [r4];
+}
+网格布局允许一条线有多个名字
+
+8.gird-row-gap gird-column-gap gird-gap
+表示行和列之间的距离可以直接用gird-gap合并
+.container{
+    display:gird;
+    gird-gap:20px 20px;(如果只有一个值 默认为相同)
+}
+根据最新标准gird-前缀删除了（不早说。。。）
+直接gap
+
+9.gird-template-areas:指定其由一个或者多单元格构成
+列：
+.container{
+    display:gird;
+    grid-template-columns:100px 100px 100px;
+    grid-template-rows:100px 100px 100px;
+    gird-template-area:'a b c'
+                       'd e f'
+                       'g h i'
+}
+这样划分了九个单元格
+如果想合并
+.container{
+    display:gird;
+    grid-template-columns:100px 100px 100px;
+    grid-template-rows:100px 100px 100px;
+    gird-template-area:'a a a'
+                       'd d d'
+                       'g g g'
+}
+
+如果不需要用到单元格 就用.
+.container{
+    display:gird;
+    grid-template-columns:100px 100px 100px;
+    grid-template-rows:100px 100px 100px;
+    gird-template-area:'a . c'
+                       'd . f'
+                       'g . i'
+}
+.表示单元格没有被利用或者该单元格不属于任何区域 并不表示该单元格不存在
+注意，区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为区域名-start，终止网格线自动命名为区域名-end。
+比如，区域名为header，则起始位置的水平网格线和垂直网格线叫做header-start，终止位置的水平网格线和垂直网格线叫做header-end。
+
+10.gird-auto-flow：
+划分好网格以后 容器的子元素会按照顺序排列 默认的顺序为先行后列 但是可以通过auto-flow改变
+gird-auto-flow：column; 先列后行
+row/column dense;
+auto-flow:row dense :表示先行后列排列 并且尽可能的填满 dense
+
+11.justify-items align-items place-items
+   justify表示水平方向内容位置  align为垂直方向位置
+   都可以取 strart end center stretch
+   place-items: align justify(只有一个值则前后相等)
+
+12.justify-content
+   align-content
+   place-content
+justify 是整个内容在容器中的水平位置
+align 垂直位置
+place 两者结合
+palce ： align justify
+
+13.gird-auto-columns
+   gird-auto-rows浏览器自动创建多余网络的宽高
+
+14.gird-template gird
+gird-template 代表columns rows areagrid属性是grid-template-rows、grid-template-columns、grid-template-areas、 grid-auto-rows、grid-auto-columns、grid-auto-flow这六个属性的合并简写形式。
+
+
+2.项目属性
+1.gird-column-start
+gird-column-end
+gird-row-start
+gird-row-end
+指定项目的边框分别定在哪个网格线
+.item-1 {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+除了1号其他都没有指定位置 那么会自动布局 这时候他们的位置由 gird-auto-flow来决定 默认值为row
+除了指定第几个网格还能指定为网格线的名字
+
+2.span  表示跨越 即左边框和右边框跨越多少个网格
+.item-1 {
+  grid-column-start: span 2;
+}
+表示1号的左边框到有边框跨两格
+.item-1{
+  grid-column-end:span 2;
+} 和上面的效果相同
+使用这四个属性，如果产生了项目的重叠，则使用z-index属性指定项目的重叠顺序。！！！！！
+
+3.grid-column 属性，
+grid-row 属性
+grid-column属性是grid-column-start和grid-column-end的合并简写形式
+grid-row属性是grid-row-start属性和grid-row-end的合并简写形式。
+
+4.id-area 表示将项目放在那个单元格
+.item-1 {
+  grid-area: e;
+} 放在e区
+grid-area属性还可用作grid-row-start、grid-column-start、grid-row-end、grid-column-end的合并简写形式，直接指定项目的位置。
+.item {
+  grid-area: <row-start> / <column-start> / <row-end> / <column-end>;
+}
+
+4.4
+justify-self 属性，
+align-self 属性，
+place-self 属性
+justify-self属性设置单元格内容的水平位置（左中右），跟justify-items属性的用法完全一致，但只作用于单个项目。
+align-self属性设置单元格内容的垂直位置（上中下），跟align-items属性的用法完全一致，也是只作用于单个项目。
+
+.item {
+  justify-self: start | end | center | stretch;
+  align-self: start | end | center | stretch;
+}

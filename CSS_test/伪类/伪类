@@ -1,0 +1,32 @@
+静态伪类 ： 只适用于超链接
+1.link 在点击链接之前
+2.visited 链接访问之后
+
+动态伪类
+1.hover 鼠标悬停在标签上
+2。active 鼠标点击标签但是不松手
+3.foucs 某个标签获得焦点时的样式 点击进入编辑状态
+
+必须按照 link visited hover active 顺序来写 love hate
+mouse:link{
+
+}
+mouse:visited{
+
+}
+mouse:active{
+
+}
+mouse:hover{
+
+}
+
+a{}与a:link{}的区别
+a{}针对所有的链接 包括锚点
+a:link{}针对有href的链接 不包括锚点
+
+在使用a的时候 伪类一定要写在a后 如 a：link a：visitied
+两个伪类如果类型相同可以用，隔开
+如 .test ul li a:link, .test ul li a:visited{
+    .....
+}

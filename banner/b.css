@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#img{
+    width: 1000px;
+    height: auto;
+    margin-left: 214px;
+}
+#list{
+    width: 300px;
+    height: 30px;
+    margin-left: 650px;
+}
+#list li{
+    width: 20px;
+    height:20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #c0c0c0;
+    float: left;
+
+}
+.bg{
+    background: #f9f2f4!important;
+}
+.ul{
+    list-style: none;
+}
+

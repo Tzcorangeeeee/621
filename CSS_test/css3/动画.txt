@@ -1,0 +1,77 @@
+动画：
+过度 transition
+2d:transform
+3d:transform
+动画：animation
+
+1.过度:transition(可以实现不同元素的平滑过渡)
+- 补间动画：自动完成从起始状态到终止状态的的过渡。不用管中间的状态。
+- 帧动画：通过一帧一帧的画面按照固定顺序和速度播放。如电影胶片。
+
+- `transition-property: all;`  如果希望所有的属性都发生过渡，就使用all。
+- `transition-duration: 1s;` 过渡的持续时间。
+- `transition-timing-function: linear;`  运动曲线。属性值可以是：
+	- `linear` 线性
+	- `ease`  减速
+	- `ease-in` 加速
+	- `ease-out` 减速
+	- `ease-in-out`  先加速后减速
+- `transition-delay: 1s;` 过渡延迟。多长时间后再执行这个过渡动画。
+可以写成综合属性：
+	transition: 让哪些属性进行过度 过渡的持续时间 运动曲线 延迟时间;
+	transition: all 3s linear 0s;
+
+2.2D元素:transform（可以实现元素的位移、旋转、变形、缩放）
+1.缩放 transform：scale(x,y); x代表水平方向 y竖直方向 大于1为放大 小于1缩小只能用数字 不能用百分比
+2.位移：transform：translate(x%,y%);x水平，y数值 正直：向右和向下 负值：向左向下 如果只有一个值就是水平移动
+应用 让绝对定位的盒子 在父亲中居中 如果是标准流可以直接margin:0px auto;
+如果不是
+div{
+   width:600px；
+   height:300px;
+   position:absolute；绝对定位的盒子
+   left:50%;让左线居中
+   top:0;
+   margin-left:-300px 向左移动宽度的一半
+}
+3.旋转：transform:rotate(x角度) x正值顺时针 x负值逆时针；
+旋转时默认为中心点旋转 如果想改旋转坐标 可以用transform-origin:px px  水平和垂直
+或者 transform-origin:bottom center   底部中心为旋转点
+
+3.3d
+transform:rotateX()
+transform:translate()
+用法和2D的一样 只不过加了坐标
+
+perspective:透明化  电脑2d不好呈现 加一个透明
+
+3d呈现：	transform-style: preserve-3d;     /* 让 子盒子 位于三维空间里 */ 由多个元素构成的  可以给这些元素的父元素加一个transform-style:preserve-3d;
+     	transform-style: flat;            /* 让子盒子位于此元素所在的平面内（子盒子被扁平化） */
+
+
+4.动画
+利用动画首先要定义
+@animation(动画名){
+    form{}(初始状态)
+    to{}(结束状态)
+}
+
+可以有多种方式定义动画
+可以
+0%{}
+
+25%{}
+
+50%{}
+
+100%{}
+* animation: 动画名称 持续时间  执行次数  是否反向  运动曲线 延迟执行。infinite 表示无限次*/调用
+animation-name:名字
+animation-duration:持续时间  这两个是必须填的 顺序固定
+
+-iteration-count:执行的次数  iteration（迭代）
+-direction:normal (正常) alternate(反向)
+-delay:延迟
+-fill-mode: forwards保留 backwords最初的状态
+animation-timing-function: ease-in; 运动曲线linear   ease-in-out  steps()
+step可以一帧一帧的展现 可以利用其做一些动画

@@ -1,0 +1,101 @@
+/*position: absolute(绝对定位)  relative（相对定位） fixed（固定定位）
+ .test{
+     position: relative;
+     left:50px;(向右移)
+     bottom:50px;（向上移）
+ }*/
+
+
+/*相对定位 relative
+relative 本身还在原来的位置 只是影子出来了  相对定位只有两个作用
+1.微调元素
+2.做绝对定位的参考 子绝父相*/
+
+/*绝对定位 absolute
+1.定义横纵坐标 横坐标用left 纵坐标top/bottom都可以
+2.所有标准的流在接受了绝对定位之后就不遵守了  可以自由定义大小以及位置了
+3.如果用top叙述 参考点在“页面”的左上角
+  如果用bottom叙述 参考点在“首屏”的左下角
+*/
+/*如果一个元素 他的父辈已经有了定位 无论什么定位  不一定是父辈 谁近谁是参照   在父亲移动过后 子元素也要一定 在子元素绝对定位过后 padding看自身*/
+/*让绝对位置的盒子在父亲中居中
+1.如果一个标准流的盒子 想让其在父亲中居中 直接margin:0 auto
+2.如果已经是绝对位置了 先position left:50%; top:0; 再margin-left:-300xp(宽度的一半)*/
+
+/*固定位置 position:fixed 不管页面怎么移动位置始终在页面的设置位置*/
+
+/*z-index
+使用z-index之前必须有定位  无论什么定位*/
+/*（1）属性值大的位于上层，属性值小的位于下层。
+（2）z-index值没有单位，就是一个正整数。默认的z-index值是0。
+（3）如果大家都没有z-index值，或者z-index值一样，那么在HTML代码里写在后面，谁就在上面能压住别人。定位了的元素，永远能够压住没有定位的元素。
+（4）只有定位了的元素，才能有z-index值。也就是说，不管相对定位、绝对定位、固定定位，都可以使用z-index值。**而浮动的元素不能用**。
+（5）从父现象：父亲怂了，儿子再牛逼也没用。意思是，如果父亲1比父亲2大，那么，即使儿子1比儿子2小，儿子1也能在最上层。*/
+
+/*
+.hezi{
+    border:10px solid orange;
+    width:360px;
+    height:200px;
+    background: #57e557;
+
+    .neirong {
+        font-size:60px;
+        width: 180px;
+        height: 100px;
+        background: blue;
+        text-align: center;
+        position: relative;
+        left: 90px;
+        top: 50px;
+    }
+
+    .erzi{
+        position: absolute;
+        right:200px;
+        width:20px;
+        height: 20px;
+        background: red;
+        text-align: center;
+        font-size: 10px;
+        padding-bottom: 20px;
+        padding-left: 20px ;
+
+    }
+
+
+}*/
+
+
+.kuangjia{
+    width: 350px;
+    height: 250px;
+    border: 1px solid #e12323;
+    margin: 100px auto;
+    position: relative;
+    z-index: 1;
+}
+img{
+    width: 350px;
+    height: 200px;
+}
+
+.neirong{
+    width: 350px;
+    height: 50px;
+    background: #4773de;
+    color: #fff;
+    position: absolute;
+    top:200px;
+    left:0px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.taocan{
+    width: 350px;
+    height: 250px;
+    position: absolute;
+    bottom:15px;
+    z-index: 2;
+}

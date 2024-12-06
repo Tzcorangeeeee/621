@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul {
+        list-style-position: inside
+    }
+    table {
+        style="border-collapse:collapse;"
+    }
+</style>
+
+
+<!--img 和src
+img=image
+img的属性
+1.src=source分相对路径和绝对路径 ./ ../为当前和上级目录的图片
+2.alt=alternative alt图片加载不出来的代替
+-->
+<body>
+    <!--img src="./1.jfif" alt="图片加载不出来" width="300px" height="300px" align="right">
+    <img src="./2.jfif" alt="图片加载不出来" width="300px" height="300px" align="left"-->
+</body>
+
+<!-- 列表-->
+
+
+<!-- 无序列表<ul> <ul>里的每一项都是<li>
+     type="属性值"。属性值可以选:disc(实心原点，默认)
+                               square(实心方点)
+                               circle(空心圆)。
+    <ul>和<ul>里面的<li>都有type-->
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ul type="square">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <ul type="circle">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+ <!--ul 和 li是可以嵌套的-->
+    <ul>
+        <li><b>深圳市</b></li>
+        <ul>
+            <li>南山区</li>
+            <li>福田区</li>
+            <li>罗湖区</li>
+        </ul>
+        <li align="left"><b>广州市</b></li>
+        <ul>
+            <li>越秀区</li>
+            <li>荔湾区</li>
+            <li>海珠市</li>
+        </ul>
+    </ul>
+</body>
+
+<!-- 有序列表 ordered list 
+ type="属性值"。属性值可以是：1(阿拉伯数字，默认)、a、A、i、I。结合start属性表示从几开始。-->
+ <body>
+    <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <ol type="1">
+            <li>呵呵</li>
+            <li>呵呵</li>
+            <li>呵呵</li>
+        </ol>
+        
+        <ol type="a">
+            <li>嘿嘿</li>
+            <li>嘿嘿</li>
+            <li>呵呵</li>
+        </ol>
+        
+        <ol type="i" start="4">
+            <li>哈哈</li>
+            <li>哈哈</li>
+            <li>哈哈</li>
+        </ol>
+        
+        <ol type="I" start="10">
+            <li>么么</li>
+            <li>么么</li>
+            <li>么么</li>
+        </ol>
+    </ol>
+
+<!-- 定义列表 definition list--  dl dt(defiition title ) dd(definition description)一个dl 里面可以有很多dt和dd--> 
+<body>
+    <dl>
+        <dt>第一章</dt>
+        <dd>第一节</dd>
+        <dd>第二节</dd>
+        <dt>第二章</dt>
+        <dd>第一节</dd>
+        <dd>第二节</dd>
+    </dl>
+</body>
+
+<!--表格 table tr每行 td单元格  th表头  colspan合并单元格  rowspan合并行 
+<table>的属性：
+
+border：边框。像素为单位。
+style="border-collapse:collapse;"：单元格的线和表格的边框线合并（表格的两边框合并为一条）
+width：宽度。像素为单位。
+height：高度。像素为单位。
+bordercolor：表格的边框颜色。
+align：表格的水平对齐方式。属性值可以填：left right center。
+注意：这里不是设置表格里内容的对齐方式，如果想设置内容的对齐方式，要对单元格标签<td>进行设置）
+cellpadding：单元格内容到边的距离，像素为单位。默认情况下，文字是紧挨着左边那条线的，即默认情况下的值为0。 注意不是单元格内容到四条边的距离哈，而是到一条边的距离，默认是与左边那条线的距离。如果设置属性dir="rtl"，那就指的是内容到右边那条线的距离。
+cellspacing：单元格和单元格之间的距离（外边距），像素为单位。默认情况下的值为0
+bgcolor="#99cc66"：表格的背景颜色。
+background="路径src/..."：背景图片。 背景图片的优先级大于背景颜色。
+bordercolorlight：表格的上、左边框，以及单元格的右、下边框的颜色
+bordercolordark：表格的右、下边框，以及单元格的上、左的边框的颜色 这两个属性的目的是为了设置3D的效果。
+dir：公有属性，单元格内容的排列方式(direction)。 
+可以 取值：ltr：从左到右（left to right，默认），
+rtl：从右到左（right to left） 
+既然说dir是共有属性，如果把这个属性放在任意标签中，那表明这个标签的位置可能会从右开始排列。-->
+
+<body>
+    <table border="1" width="400" align="left">
+        <tr>
+            <td>千古壹号</td>
+            <td>23</td>
+            <td>男</td>
+            <td>黄冈</td>
+        </tr>
+    
+        <tr>
+            <td>许嵩</td>
+            <td>29</td>
+            <td>男</td>
+            <td>安徽</td>
+        </tr>
+    
+        <tr>
+            <td>邓紫棋</td>
+            <td>23</td>
+            <td>女</td>
+            <td>香港</td>
+        </tr>
+    </table>
+</body>
+<!--内嵌框架-->
+<body>
+    <a href="http://www.baidu.com" target="1">百度</a>
+    <a href="http://www.sina.com" target="1">新浪</a>
+    <a href="http://www.taobao.com" target="1">淘宝</a>
+    <iframe src="http://www.baidu.com" width="1500" height="1500" name="1"></iframe>"
+</body>"
+</html>

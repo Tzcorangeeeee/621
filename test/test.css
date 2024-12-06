@@ -1,0 +1,22 @@
+.my-table{
+    width: 100%;
+    border: 1px solid #333333;
+    border-radius: 6px;
+}
+
+/*
+xzxzx*/
+thead{
+    background-color: #d7d3d3;
+}
+thead tr td{
+    text-align: center;
+}
+tbody tr {
+    line-height: 44px;
+    text-align: center;
+}
+tbody tr:hover{
+    background-color: #d7d3d3;
+    cursor: pointer;
+}

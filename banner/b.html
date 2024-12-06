@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="pic/1.png" id="img" onclick="f()">
+<ul id="list">
+  <li class="bg"></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
+</body>
+<script>
+    var i = 0;
+    function f(){
+        var arr = ["pic/1.png","pic/2.png","pic/5.png","pic/logo.png"];
+        var img = document.getElementById("img");
+        i++;
+        if(i>=arr.length){
+            i=0;
+        }
+        img.src=arr[i];
+        var list = document.getElementById("list");
+        var li = list.getElementsByTagName("li");
+        for(var j=0;j<li.length;j++){
+            li[j].className="";
+        }
+        li[i].className="bg";
+    }
+    setInterval("f()",1000);
+</script>
+
+</html>

@@ -1,0 +1,89 @@
+/*font-size: 50px; 		字体大小
+line-height: 30px;      行高
+font-family: 幼圆,黑体; 	字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认
+font-style: italic ;		italic表示斜体，normal表示不倾斜
+font-weight: bold;	粗体
+font-variant: small-caps;  小写变大写*/
+
+/*font-weight: normal; 正常*
+font-weight: bold;  加粗
+font-weight: 100;
+font-weight: 200;
+font-weight: 900;*/
+
+/*letter-spacing: 0.5cm ; 单个字母之间的间距
+word-spacing: 1cm; 单词之间的间距
+text-decoration: none; 字体修饰：none 去掉下划线、underline 下划线、line-through 中划线、overline 上划线
+color:red; 字体颜色
+text-align: center; 在当前容器中的对齐方式。属性值可以是：left、right、center（在当前容器的中间）、justify
+text-transform: lowercase; 单词的字体大小写。属性值可以是：uppercase（单词大写）、lowercase（单词小写）、capitalize（每个单词的首字母大写）*/
+
+
+.css_test{
+    font-size: 50px;
+    line-height: 100px;
+    font-style: italic;
+    text-align: center;
+    vertical-align: center;
+    font-weight: bold;
+    word-spacing: 20px;
+
+}
+.css_test1{
+    text-align: center;
+    font-size: 50px;
+    line-height: 100px;
+    font-style: normal;
+    word-spacing: -0.5em;
+}
+.letter1{
+    font-variant: small-caps;
+    text-align: center;
+    font-size: 50px;
+    letter-spacing: 20px;
+}
+.letter2{
+    font-size: 50px;
+    text-align: center;
+}
+/*
+auto：默认值。浏览器根据当前情况自动确定鼠标光标类型。
+pointer：IE6.0，竖起一只手指的手形光标。就像通常用户将光标移到超链接上时那样。
+hand：和pointer的作用一样：竖起一只手指的手形光标。就像通常用户将光标移到超链接上时那样。
+*/
+.sentence{
+    font-size: 50px;
+    word-spacing: 20px;
+    cursor: pointer;
+}
+img{
+    width: 50px;
+    vertical-align: middle;
+
+}
+/* list-style 将多个属性写在同一个声明中*/
+/*列表 ui li*/
+.my_list{
+    list-style-image: none;
+
+}
+
+/*overflow
+visible：默认值。多余的内容不剪切也不添加滚动条，会全部显示出来。
+hidden：不显示超过对象尺寸的内容。
+auto：如果内容不超出，则不显示滚动条；如果内容超出，则显示滚动条。
+scroll：Windows 平台下，无论内容是否超出，总是显示滚动条。Mac 平台下，和 auto 属性相同。*/
+
+.sentence0{
+    overflow: auto;
+    float: left;
+}
+.sentence1{
+    overflow: hidden;
+}
+.sentence2{
+    overflow: visible;
+}
+
+
+

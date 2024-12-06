@@ -1,0 +1,17 @@
+
+body{
+    background: grey;
+}
+div{
+
+    font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Microsoft Yahei";
+    color: #666;
+}
+
+.shadow{
+    font-size: 30px;
+    text-shadow: -1px -1px 1px #000, 1px 1px 1px #fff;
+}

@@ -1,0 +1,5 @@
+文字换行：
+overflow-warp:
+word-break：指定了怎样在单词内断行。这里涉及到CJK（中文/日文/韩文）的文字换行。
+white-space：空白处是否换行。
+想换行：white-space:nowrap 不换行:white-space:pre-wrap

@@ -1,0 +1,188 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.top{
+    position: relative;
+    width: 970px;
+    height: 103px;
+    margin: 0 auto;
+}
+.top .logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    width: 277px;
+    height: 103px;
+}
+.top .logo img{
+    width: 277px;
+    height: 103px;
+}
+.top .title {
+    float: right;
+    width: 679px;
+    height: 46px;
+    margin-top: 57px;
+}
+.top .title ul{
+    list-style: none;
+}
+.top .title ul li{
+    float: left;
+    width: 135.8px;
+    height: 46px;
+    text-align: center;
+    line-height: 46px;
+}
+.top .title ul li a{
+    display: block;
+    width: 135.8px;
+    height: 46px;
+}
+.top .title ul li a:link, .top .title ul li a:visited{
+    text-decoration: none;
+    background-color: #790098;
+    color: #fff;
+}
+.top .title ul li a:hover{
+    background-color: orange;
+}
+.top .language {
+    float: right;
+    width: 137px;
+    height: 49px;
+    position: absolute;
+    left: 833px;
+    font-size: 25px;
+}
+
+.middle{
+    position: relative;
+    width: 970px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.middle .img{
+    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 310px;
+    height: 500px;
+}
+.middle .img img{
+    width: 300px;
+    height: 500px;
+}
+.middle .list1{
+    position: absolute;
+    top: 0;
+    left: 320px;
+    float: left;
+    width: 450px;
+    height: 230px;
+}
+.middle .list1 ul{
+    list-style: none;
+}
+.middle .list1 .listinside li{
+    float: left;
+    padding-left: 150px;
+    font-size: 20px;
+    border-bottom: 3px solid ;
+    border-image-source: linear-gradient(to right, red, blue); /* 使用线性渐变作为边框图像 */
+    border-image-slice: 1; /* 确保渐变填充整个边框 */
+}
+.middle .list1 .listinside2 ul li{
+    font-size: 20px;
+    line-height: 40px;
+}
+.middle .list2 {
+    position: absolute;
+    top: 240px;
+    left: 320px;
+    float: left;
+    width: 450px;
+    height: 140px;
+}
+.middle .list2 .listinside3 ul{
+    list-style: none;
+}
+.middle .list2 .listinside3 li{
+    float: left;
+    padding-left: 150px;
+    font-size: 20px;
+    border-bottom: 3px solid #ce2828;
+    border-image-source: linear-gradient(to right, red, blue); /* 使用线性渐变作为边框图像 */
+    border-image-slice: 1; /* 确保渐变填充整个边框 */
+}
+.middle .list2 .listinside4 ul li{
+    font-size: 20px;
+    line-height: 40px;
+}
+.middle .information{
+    position: absolute;
+    top: 390px;
+    left: 320px;
+    float: left;
+    width: 450px;
+    height: 65px;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.ttf?t=1733394808281') format('truetype');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 40px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.middle .title1{
+    position: absolute;
+    bottom: 0;
+    left: 320px;
+    float: left;
+    width: 650px;
+    height: 35px;
+    background: darkgreen;
+}
+.middle .introduction{
+    position: absolute;
+    top: 0;
+    right: 0;
+    float: left;
+    width: 190px;
+    height: 455px;
+    border-left: 1px solid green;
+}
+.middle .introduction .datou{
+    font-size:20px;
+    border-bottom: 3px solid;
+    border-image-source: linear-gradient(to right, red, blue); /* 使用线性渐变作为边框图像 */
+    border-image-slice: 1; /* 确保渐变填充整个边框 */
+    text-align: center;
+}
+.middle .introduction .datouzhao img{
+    width: 190px;
+    height:190px;
+}
+
+.bottom{
+    position: relative;
+    width: 970px;
+    height: 35px;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+.bottom .information1{
+    width: 970px;
+    height: 35px;
+    background: #790098;
+    margin: 0 auto;
+}

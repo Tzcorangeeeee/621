@@ -1,0 +1,15 @@
+/*盒子模型 box model div span a 都是盒子模型
+但是 文字、图片等不是 因为他们的内容就是其本身
+盒子主要属性 width height border padding margin*/
+
+/*<body>也是有Padding的  最大的是盒子是document本身 浏览器自身
+padding 是有颜色的
+padding-top  -bottom -left -right
+如果写了四个值，则顺序为：上、右、下、左。
+如果只写了三个值，则顺序为：上、右和左、下。
+如果只写了两个值，则顺序为：上和下、左和右。*/
+
+/*border 是可以被拆分的
+1.方向拆分 -top -botoom -right -left
+2. 三个要素拆分 -width -style -color
+如果一个小属性隔开多个值 按顺时针 */

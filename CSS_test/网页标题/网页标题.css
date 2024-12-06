@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.web_title{
+    width: 720px;
+    height: 50px;
+    border: 1px solid #ee3232;
+    margin: 50px auto;
+}
+
+.web_title ul{
+    list-style:none;
+}
+
+.web_title ul li {
+    float: left;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.web_title ul li a {
+    display: block;
+    width: 120px;
+    height: 50px;
+    text-decoration: none;
+    background: #ee3232;
+}
+
+.web_title ul li a:hover {
+    background-color: #3c54ce;
+}
+
+
+

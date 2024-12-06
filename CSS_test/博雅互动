@@ -1,0 +1,11 @@
+版心：页面中主要内容的区域
+从一个网页的结构来看
+分为头部（导航区（header））、banner图、内容区和底部
+我们一般把板心称作class=inner_c c-center
+现在有一个头部是 logo+导航+超链接（加入我们）
+1.这个logo不可以用img直接作为logo 这样不利于搜索seo
+我们可以用一个超链接作为布局 然后将img设置为超链接文字的背景，再利用text-indent将超链接赶到视线以外的地方
+2.加入我们的超链接 最好将a放在div里面 然后设置div的margin和padding
+一般的做法是将超链接放入 然后加上背景图
+3.bonner图 我们在头部和banner图之间加一堵墙 <div></div> 然后clear:both清除一下浮动的影响然后再设置banner图
+4.视频播放的小三角可以用背景图来实现直接一个background：url();

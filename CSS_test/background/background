@@ -1,0 +1,32 @@
+background-color
+ 1.background-color:red/blue/green;
+ 2.background-color:rgb(255,255,0);
+ 3.background-color:#ff0000;
+
+设置背景 background-image:url();
+
+background-postion 位置
+
+background-attchment 是否固定
+ 1.fixed
+ 2scroll
+
+background 是一个综合属性
+
+background-size
+1.555px 555px;
+2.50% 50%;
+3.100% auto
+4.cover 图片始终填满容器 超出部分会隐藏
+5.contain 完整的显示
+
+background-origin
+1.padding-box 内边距开始显示背景图
+2.border-box  边框开始显示背景图
+3 content-box 内容区域开始显示背景图
+clip 裁剪 超出的部分会被裁剪 和origin相同
+
+
+线性渐变 linear-greadient （方向，起始颜色，终止颜色）
+
+

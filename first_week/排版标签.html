@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>排版标签</title>
+    <style> 
+        .header{
+            background-color: aquamarine;
+        }
+    </style>
+
+</head>
+<!-- 标题标签 h1~h6  h1大标题 h6小标题  h1~h6标签只能出现一次  有align属性 -->
+<body>
+     <a id="top">
+     <h1 align="left">Tzc</h1>
+     <h2 align="right">Tzc</h2>
+     <h3 align="center">Tzc</h3>
+     <h4>Tzc</h4>
+     <h5>Tzc</h5> 
+     <h6>Tzc</h6>
+</body>
+
+
+
+
+<!-- 段落标签 P ---->
+ <body>
+    <p>
+        TTTTTTTZZZZZZZCCCCCCCC
+    </p>
+    <p>
+        TTTTTTTZZZZZZZCCCCCCCC
+    </p>
+</body>
+
+
+
+
+<!-- hr/ 水平线标签 -->
+ <!-- align="属性值"：设定线条置放位置。属性值可选择：left right center。
+      size="2" ：设定线条粗细。以像素为单位，内定为2。
+      width="500"或width="70%"：设定线条长度。可以是绝对值（单位是像素）或相对值。如果设置为相对值的话，内定为100%。
+      color="#0000FF"：设置线条颜色。
+      noshade：不要阴影，即设定线条为平面显示。若没有这个属性则表明线条具阴影或立体。 -->
+ <body>
+    <p>
+       TTTTTTTZZZZZZZCCCCCCCC
+    </p>
+    <hr>
+    <p>
+        TTTTTTTZZZZZZZCCCCCCCC
+    </p>
+    <hr width="100%" size="5" color="#0000FF" noshade>
+</body>
+
+
+
+
+
+<!--  br/换行 -->
+  <body>
+    TTTTTTT<br>ZZZZZZZ<br>CCCCCCCC
+  </body>
+
+
+
+
+<!-- class 可以为多个元素使用同一个样式 不要要为每个元素独特定义-->
+<!-- div（有align属性）和 span  常用-->
+
+<body>
+    <div class="header">
+        <button id="myBtn">按钮</button>
+        <div class="logo">TTTTTTTZZZZZZZCCCCCCCC</div>
+        <div class="nav">TTTTTTTZZZZZZZCCCCCCCC</div>
+        <p style="color: blue;" class="header">00000</p><p>999999</p>
+        <span>99999</span><span>00000</span>
+    </div>
+    <div class="content" align="center">
+        <div class="guanggao">TTTTTTTZZZZZZZCCCCCCCC </div>
+        <div class="dongxi">TTTTTTTZZZZZZZCCCCCCCC</div>
+    </div>
+    <div class="footer">TTTTTTTZZZZZZZCCCCCCCC</div>
+</body>
+<script type="text/javascript">
+    console.log('hello world')
+    console.log(document.getElementById('myBtn'))
+    document.getElementById('myBtn').onclick = function(){
+        alert('点击了按钮')
+    }
+
+</script>
+</html>
