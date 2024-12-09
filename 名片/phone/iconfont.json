@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1283",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "f0162",
+      "unicode_decimal": 983394
+    },
+    {
+      "icon_id": "3996123",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "7463978",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+.TZC{
+    width: 300px;
+    height: 500px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    background-color: #efe8ed;
+}
+.TZC .background{
+    width: 100%;
+    height: 25%;
+}
+.TZC .background img{
+    width: 100%;
+    height: 100%;
+}
+.name{
+    width: 100%;
+    height: 20%;
+}
+.name img{
+    width:90px;
+    height:90px;
+    border-radius: 50px;
+    border: 3px solid white;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+}
+.myname{
+    font-size:25px;
+    padding-top: 20%;
+    padding-left: 20px;
+}
+.icon-nan{
+    position: absolute;
+    top: 39%;
+    left: 34%;
+}
+.phone{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.message{
+    width: 30%;
+    height: 100%;
+    background: #eee9e9;
+    border-radius: 15px;
+    font-size: 15px;
+}
+.icon-xiaoxi{
+    position: absolute;
+    top: 46%;
+    left: 13%;
+}
+.call{
+    width: 30%;
+    height: 100%;
+    border-radius: 15px;
+    background: #eee9e9;
+    font-size: 15px;
+}
+.icon-dianhua{
+    position: absolute;
+    top: 46%;
+    left: 48%;
+}
+.video{
+    width: 30%;
+    height: 100%;
+    border-radius: 15px;
+    background: #eee9e9;
+    font-size: 15px;
+    overflow: hidden;
+}
+.icon-shipin{
+    position: absolute;
+    top: 46%;
+    right: 13%;
+}
+
+.info{
+    width: 100%;
+    height: 35%;
+    overflow-y: scroll;
+    border-bottom: 3px solid #000000;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    font-size: 10px;
+}
+
+.list1{
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+}
+.info ul{
+    list-style: none;
+    line-height: 45px;
+    padding-left: 25px;
+    padding-top: 0;
+}
+.more{
+    font-size: 20px;
+    padding-left: 30%;
+    padding-top: 10px;
+}
