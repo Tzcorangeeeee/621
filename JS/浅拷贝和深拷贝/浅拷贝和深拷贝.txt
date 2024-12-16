@@ -1,0 +1,23 @@
+1.浅拷贝: 只拷贝最外层的数据  更深层的对象值拷贝引用
+进行拷贝 是传值 不是传值 如果进行修改会影响之前的数值
+1.用 for in 遍历
+参考js 中for in
+这里person2 的name 和 age 是单独放在新的堆内存中 和person互补印象
+但是他们info 的属性 是在同一个堆内存中的 所以修改了person2.info.desc 会影响person中的
+
+2.  Object.assign()
+1.obj2 = Object.assign(obj2 , obj1)
+2.Object.assign(目标  , 源对象1 , 2) 可以拷贝多个对象 如果属性相同
+这也是浅拷贝
+写法
+1. person2={}
+   Object.assign(person2,person)
+2.var person2 = Object.assign({},person)
+3.当有多个拷贝时 会覆盖掉前面的
+4.报错  当变量属性是 null 或者 undefined的时候 会报错
+所以要提前确定好 变量的类型
+
+
+深拷贝就是拷贝多层数据 每一层都拷贝
+深拷贝就是浅拷贝的递归
+用 for in

@@ -1,0 +1,50 @@
+1.Number
+
+1.Number.isInteger(数字);
+
+2.toFixed()
+myNum.fixed(num)
+将myNum四舍五入之后返回  返回的类型是字符串
+
+如
+var num = 3.1415;
+var num1 = num.fixed(3);
+console.log(num1); 3.14;
+
+Math
+方法	描述	备注
+Math.PI	圆周率	Math对象的属性
+Math.abs()	返回绝对值
+Math.random()	生成0-1之间的随机浮点数	取值范围是 [0，1)
+Math.floor()	向下取整（往小取值）
+Math.ceil()	向上取整（往大取值）
+Math.round()	四舍五入取整（正数四舍五入，负数五舍六入）
+Math.max(x, y, z)	返回多个数中的最大值
+Math.min(x, y, z)	返回多个数中的最小值
+Math.pow(x,y)	乘方：返回 x 的 y 次幂
+Math.sqrt()	开方：对一个数进行开方运算
+
+    var num = -0.6;
+    console.log(Math.abs(num));        //取绝对值 0.6
+    console.log(Math.floor(num));      //向下取整，向小取 -1
+    console.log(Math.ceil(num));       //向上取整，向大取 0
+    console.log(Math.round(num));      //四舍五入取整（正数四舍五入，负数五舍六入）-1
+    console.log(Math.random());        //生成0-1之间的随机数 0.123435647564534
+
+1.Math.abs()：如果字符串中有可以转换的数字 那么会先做隐式转换然后在做abs
+
+2.Math.random():
+0到x  Math.random(Math.random()*x);
+x到y  Math.random(Math.random()(y-x)*x);
+
+生成[x,y]之间的随机数
+function getRandom{
+    return Math.floor(Math.random(max-min+1))+min
+}
+console.log(1,10)
+
+pow();平方
+sqrt();开方
+
+    encodeURIComponent();   //把字符串作为 URI 组件进行编码
+    decodeURIComponent();   //把字符串作为 URI 组件进行解

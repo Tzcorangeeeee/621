@@ -1,0 +1,27 @@
+基本数据类型string是不能绑定属性和方法的
+var a = 'TZC'
+str.aaa=12;
+
+console.log(str)  string
+console.log(str.aaa)  undefined
+
+引用数据类型的string是可以使用属性和方法的
+var strObj = new String('asdf);
+strObj.aaa=321;
+
+console.log(strObj);
+console.log(typeof strObj)  object
+console.log(strObj.aaa)  321
+
+JS提供了三个基本包装类
+
+String()
+Boolean()  这些的返回都是对象
+Number()
+
+在底层 字符串是以数组的形式存放的
+例
+const a = 'asdfg'
+console.log(a.length);  5
+console.log(a[3]); d
+

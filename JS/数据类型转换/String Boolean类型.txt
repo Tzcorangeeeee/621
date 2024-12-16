@@ -1,0 +1,50 @@
+用'' " "括起来的都是字符串
+字符串用的‘“不能混着用
+
+转义字符
+\' 表示 ' 单引号
+\" 表示 " 双引号
+\\ 表示\
+\r 表示回车
+\n 表示换行。n 的意思是 newline。
+\t 表示缩进。t 的意思是 tab，制表符。
+\b 表示空格。b 的意思是 blank。
+
+字符串长度：字符串是由若干字符组成的  我们可以通过length来获取这个字符串的长度
+var str1 = '666666'
+console.log(str1.length) 6
+标点和空格都算一个字符
+
+字符串的不可变性：
+var str = 'hello'
+str = 'goodbye'
+看似内容变了 实则是地址变了
+当重新给str 赋值的时候 hello并不会被修改 仍然存在内存中 str会指向goodbye
+
+
+在模版字符串中插入变量
+var name = 'smyhvae';
+var age = '26';
+console.log('name:' + name + ',age:' + age); //传统写法
+
+var name = 'qianguyihao';
+var age = '26';
+console.log('我是' + name + ',age:' + age); //传统写法
+console.log(`我是${name},age:${age}`); //ES6 写法。注意语法格式
+
+在模板字符串中插入表达式
+const a = 5;
+const b = 10;
+console.log('this is ' + (a + b) + ' and\nnot ' + (2 * a + b) + '.');
+
+const a = 5;
+const b = 10;
+console.log(`this is ${a + b} and
+not ${2 * a + b}.`);
+
+this is 15 and
+not 20.
+
+
+布尔类型 一个TRUE  一个 FALSE
+当布尔类型相加时TRUE算1 FALSE为0；

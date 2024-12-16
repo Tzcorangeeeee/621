@@ -1,0 +1,12 @@
+.box{
+    width:300px;
+    height:300px;
+    margin: 0 auto;
+    padding-top: 300px;
+}
+
+.box button{
+    width:300px;
+    height:100px;
+    font-size: 32px;
+}

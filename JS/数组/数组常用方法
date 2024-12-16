@@ -1,0 +1,298 @@
+1.判断是否为数组
+布尔 = isArray(数组)
+
+2.数组转换为字符串
+
+1.toString()
+字符串 = 数组.toString();
+const str = [1,3,5].toString();
+结果 '1,3,5'
+
+2.字符串 = String(数组)；
+const str = String[1,3,5]
+结果 '1,3,5'
+
+3.join(',')
+新字符串 = 数组.join(',') 这里的返回结果为转换后的字符串
+默认值为 逗号，
+const arr = [1,2,3]
+var str = arr.join('-')
+console.log(str) = '1-2-3'
+
+3.split()  !!!这是字符串的方法
+当接受到一个字符串可以用split将一个字符串拆分为一个数组
+例如接收到一个"q, i, a, n"的字符串 那么可以用split来拆分成['q', 'i', 'a', 'n']
+
+
+4.Array.form(): 将伪数组转换为数组
+伪数组 有length属性的数组或者可以迭代的数组
+
+const name = 'tzc';
+console.log(Array.form(name));  ["t","z","c"]
+当我们获得了一个伪数组是不可以 用数组的方法的  我们可以用Array.form()将其改为真数组然后利用数组的方法
+
+5.Array.of(value1, 2, 3)
+const arr = Array.of(1,'abc','true')
+console.log(arr) = [1,abc,true]
+
+2.数组元素的添加和删除
+1.push()向数组的最后面插入一个元素 会改变数组 返回结果为新数组的长度
+插入后变成新数组
+var arr = [1,2,3,4,5,6]
+var result = arr.push(7);
+var result1 = arr.push(8,9);
+
+2.pop()删除数组的最后一个或多个元素 会改变新数组 返回结果为新长度
+同上
+
+3.unshift() 向数组最前面插入一个或多个元素
+同上
+
+4.shift() 删除数组的第一个元素 返回结果为！！被删的元素
+var arr = [1,2,3,4,5]
+
+5.splice()从数组中删除指定的元素 返回结果是被删除后的新数组
+新数组 = 原数组.splice(起始索引index, 需要删除的个数, 新的元素1, 新的元素2...);
+删除个数后面为新的元素表示 插入新的元素
+1.
+var arr1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+var result1 = arr1.splice(1);
+这里是 从a开始 删除后面所有元素
+
+var arr1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+var result1 = arr1.splice(-2);
+从倒数第二个开始 删除后面所有元素
+
+var arr1 = ['a', 'b', 'c', 'd', 'e', 'f'];
+var result1 = arr1.splice(1,3);
+从第一个开始 删除后面三个元素
+
+const arr4 = ['a', 'b', 'c', 'd'];
+arr4.splice(arr4.indexOf('c'), 1);
+console.log('arr4：' + JSON.stringify(arr4));
+删除数组中的'c'这个元素  指定删除indexOf()查找元素
+
+var result5 = arr5.splice(1, 3, '千古壹号', 'vae');
+从第一个开始 删除后面三个元素 在1后面添加'千古壹号', 'vae'
+
+6.concat() 链接两个或多个数组  返回值为新的数组 不会改变新的数组
+新数组 = 老数组.concat(xx,xx)
+
+var arr1 = [1,2,3]
+var arr2 = [3,4,5]
+var arr3 = [4,5,6]
+
+var result = arr1.concat(arr2) = [1,2,3,4,5,6]
+var result1= arr2.concat(arr1,arr3) =[1,2,3,4,5,6,4,5,6]
+
+还可以用...来扩展运算符
+var arr = [1,2,3]
+var result = [4,5,6]
+
+result=[4,5,6, ...arr]
+console.log(JSON.stringify(result)) = [4,5,6,1,2,3]
+
+
+6.slice();从数组中提取一个或多个元素 返回值为新的数组 不会改变原来数组
+新数组 = 老数组.slice(开始/结束)  包含开始 不含结束
+const arr = ['a', 'b', 'c', 'd', 'e', 'f'];
+
+const result1 = arr.slice(); // 不加参数时，则获取所有的元素。相当于数组的整体赋值
+const result2 = arr.slice(2); // 从第二个值开始提取，直到末尾
+const result3 = arr.slice(-2); // 提取最后两个元素
+const result4 = arr.slice(2, 4); // 提取从第二个到第四个之间的元素（不包括第四个元素）
+const result5 = arr.slice(4, 2); // 空
+arr: ['a', 'b', 'c', 'd', 'e', 'f'];
+result1: ['a', 'b', 'c', 'd', 'e', 'f'];
+result2: ['c', 'd', 'e', 'f'];
+result3: ['e', 'f'];
+result4: ['c', 'd'];
+result5: [];
+
+fill(); 用一个固定值来填充数组
+新数组 = 数组.fill(固定值,startIndex,endIndex)包左不包右
+
+reverse()：反转数组，返回结果为反转后的数组（会改变原来的数组）。
+
+
+sort():对数组的元素进行从小到大来排序（会改变原来的数组）。
+如果sort()不带参数 那么就会按照Unicode表格来排序
+var arr = [5, 2, 11, 3, 4, 1];
+自定义排序规则
+var result = arr.sort(function (a, b) {
+    return a - b; // 升序排列
+    // return b - a; // 降序排列
+});
+console.log('arr =' + JSON.stringify(arr));
+console.log('result =' + JSON.stringify(result));
+
+箭头函数
+var arr = [5, 2, 11, 3, 4, 1];
+var result = arr.sort(function(a,b)=>a-b);
+
+在后端返回数据的时候 可能是int型  也可能是字符串  那我们我们需要parseInt()转换一下
+
+indexOf(想找的元素/开始索引的位置)/lastIndexOf() 从前往后找 从后往前找
+indexOf在索引的时候严格按照===
+
+includes()
+判断 布尔 = arr.includes(元素，位置)；
+
+find()找到第一个满足可以返回TRUE的值 并立即停止寻找 如果没有找到返回undefined
+let arr = [2, 3, 2, 5, 7, 6];
+let result = arr.find((item, index) => {
+    return item > 4; //遍历数组arr，一旦发现有第一个元素大于4，就把这个元素返回
+});
+console.log(result); //打印结果：5
+
+findIndex()
+找到第一个满足条件返回TRUE的值的索引 立刻停止遍历 没找到就返回-1
+let arr = [2, 3, 2, 5, 7, 6];
+let result = arr.findIndex((item, index) => {
+    return item > 4; //遍历数组arr，一旦发现有第一个元素大于4，就把这个元素的index返回
+});
+console.log(result); //打印结果：3
+
+
+every() 和 some()
+every 对数组中的每一个元素进行回调函数  所有元素都满足则返回true  如果一项不满足则返回flase
+some 只需要一个满足就返回TRUE并停止遍历
+
+const arr = ['福田','南山','深圳北','保安'];
+const result = arr.every(function(item, index,array){
+    if(item.length > 2){
+        return false;
+    }
+    else return true;
+})
+console.log(result);  这里会返回false
+
+every则会返回TRUE
+
+
+
+
+
+遍历数组
+const arr = [1,2,4,5,6,7,8,9,10];
+
+1.用for循环
+for(var i = 0; i<arr.length; i++){
+    console.log(arr[i]);
+}
+
+2.forEach()
+
+arr.forEach(function(currentItem,currentIndex ,currentArray) {     item(元素) index(索引值) array(列表)
+    console.log(currentItem);
+})
+console.log(JSON.stringify(arr));
+
+!!!利用forEach的时候 如果直接修改item是无效的
+例如 如果元素是基本类型 在function内 item = item*2; 这是无效的
+再例如 如果是引用类型 item = {
+    xxxxx
+}  这样修改整个元素对象也是无效的
+
+如果 引用类型 修改元素的某个属性 是可以的
+例如
+ item.name = xxx;
+
+ 标准修改
+ 1、数组的元素是基本数据类型
+ let numArr = [1, 2, 3];
+ numArr.forEach((item, index, arr) => {
+     arr[index] = arr[index] * 2;
+ });
+ console.log(JSON.stringify(numArr)); // 打印结果：[2,4,6]
+
+2、数组的元素是引用数据类型时，直接修改对象
+let objArr = [
+    { name: '千古壹号', age: 28 },
+    { name: '许嵩', age: 34 },
+];
+objArr.forEach((item, index, arr) => {
+    arr[index] = {
+        name: '小明',
+        age: '10',
+    };
+});
+console.log(JSON.stringify(objArr)); // 打印结果：[{"name":"小明","age":"10"},{"name":"小明","age":"10"}]
+
+
+/2、数组的元素是引用数据类型时，直接修改对象
+let objArr = [
+    { name: '千古壹号', age: 28 },
+    { name: '许嵩', age: 34 },
+];
+objArr.forEach((item, index, arr) => {
+    arr[index] = {
+        name: '小明',
+        age: '10',
+    };
+});
+console.log(JSON.stringify(objArr)); // 打印结果：[{"name":"小明","age":"10"},{"name":"小明","age":"10"}]
+
+
+新推出 for of  来循环遍历
+for(let value of arr) {
+	console.log(value);
+}
+
+map()对数组中的每一项都进行回调函数 并返回结果（新的数组） 组成新的数组 不会改变原来的数组
+
+const arr = [1,2,3,5,5];
+
+var result = arr.map(item => {
+    item+=10;
+});
+console.log(result);
+
+实用的两种map
+const arr1 = [
+    { name: '田梓成', age: '21' },
+    { name: '老田梓成', age: '31' },
+];
+
+const arr2 = arr1.map(item => item);
+console.log(arr2);
+
+const arr3 = arr1.map(item =>( {
+    myAge :item.age,
+    myName:item.name,
+} ));
+console.log(arr3);
+
+map在改变item整个值那么他不会改变原数组 如果是item里面的某个属性 那么他会改变原数组
+map在遍历的时候如果不加return 默认为undefined
+
+
+filter() 对数组每一项都进行回调函数  将返回true的元素 return出来
+
+reduce() 从左到有进行一个缩进 最终计算一个值
+arr.reduce(function (previousValue, currentValue, currentIndex, arr) {}, initialValue);
+prev 上次返回的值  如果没有则为0  可以用initialValue给一个初始值
+Value(item)
+Index下标
+
+求总值
+function repeatCount(arr , value){
+    if(!arr || arr.length == 0) return 0;
+
+    return arr.reduce((totalCount,item) =>{
+        totalCount+=item == value ? 1:0;
+        return totalCount;
+    },0 )
+}
+
+let arr1 = [1, 2, 6, 5, 6, 1, 6];
+
+console.log(arr1);
+console.log(repeatCount(arr1,6));
+
+求最大值
+let arr1 = [1, 2, 6, 5, 6, 1, 6];
+const maxVale = arr1.reduce((prev,item) => {
+    return prev>item? prev:item;
+})
+console.log(maxVale);

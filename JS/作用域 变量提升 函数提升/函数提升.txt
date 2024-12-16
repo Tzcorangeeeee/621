@@ -1,0 +1,35 @@
+在用函数表达式创建一个函数的时候
+const foo = function(){} 函数不会被提前声明 所以不能在函数声明前调用
+
+foo1(); 可以正常使用
+foo2();  会报错
+
+function foo1(){
+    console.log('我是foo1')；
+}
+
+const foo2 = function(){
+    console.log('我是foo2')；
+}
+
+函数提升优先于变量提升
+fun();
+
+var fun = function(){
+    console.log(A);
+}
+
+function fun(){
+    console.log(B)
+}
+fun();
+这里会优先输出B 再输出A
+因为函数提升 高于变量提升
+
+
+定义了形参就说明在函数作用域中声明了变量
+function fun(e){  这里的e 就相当于 var e ;
+    console.log('呜呜呜');
+}
+
+在嵌套函数中 变量会由内而外的寻找定义  就近原则

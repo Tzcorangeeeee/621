@@ -1,0 +1,31 @@
+1. 调用函数
+
+function total(a,b){
+    return a+b;
+}
+
+var sum = total(1,2)
+console.log(sum)
+调用先声明一个变量 在 调用函数 并给出形参
+接着输出 变量
+
+2.当一个被保存为一个对象的属性时  我们称它为一种方法
+var A = {
+    B:function (){
+        console.log("111");
+    }
+}
+A.B();
+
+在对象里面是不可以用函数声明的 如function B(){}这种
+
+3.间接调用
+利用call 或apply 等间接调用
+var obj = {};
+function sum(x,y){
+    return x+y;
+}
+console.log(sum.call(obj,1,2));//3
+console.log(sum.apply(obj,[1,2]));//3
+
+

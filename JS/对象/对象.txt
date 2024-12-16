@@ -1,0 +1,31 @@
+JS中 对象是一组无序的关于属性和方法的集合
+对象的作用：封装信息
+特征和行为 就是属性和方法
+只要不是基本数据类型的都是对象 String  number boolean BigInt Null undefined symbol
+
+保存一个值的时候可用变量 表示一组数据可以用数组
+const person['tzc','21','man','180']
+用JS   自定义里面的元素都是键值对（key：value的映射）
+const person = {
+    name: 'qianguyihao',
+    age: 30,
+    sex: '男',
+    favor: ['阅读', '羽毛球'],
+    sayHi: function () {
+        console.log('qianguyihao');
+    },
+};
+
+如果属性名不符合js命名标准 则要用''标记
+
+对象的方法（函数）
+const obj = new Object();
+obj.myname:function{
+    console.log('TZC');
+}
+
+console.log(obj.myname)//调用方法
+console.log(obj.myname)//调用函数
+
+
+

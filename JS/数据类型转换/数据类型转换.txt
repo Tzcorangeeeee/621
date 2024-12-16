@@ -1,0 +1,122 @@
+1.转换为string
+toString();
+var a1 = 'qianguyihao';
+var a2 = 29;
+var a3 = true;
+
+// 引用数据类型
+var a4 = [1, 2, 3];
+var a5 = { name: 'qianguyihao', age: 29 };
+// undefined 和 null
+var a6 = null;
+var a7 = undefined;
+// 打印结果都是字符串
+console.log(a1.toString()); // "qianguyihao"
+console.log(a2.toString()); // "29"
+console.log(a3.toString()); // "true"
+console.log(a4.toString()); // "1,2,3"
+console.log(a5.toString()); // "object"
+// 下面这两个，打印报错
+console.log(a6.toString()); // 报错：Uncaught TypeError: Cannot read properties of undefined'
+console.log(a7.toString()); // 报错：Uncaught TypeError: Cannot read properties of null
+
+NULL和undefined不支持toString()
+小技巧：在 chrome 浏览器的控制台中，Number类型、Boolean类型的打印结果是蓝色的，String类型的打印结果是黑色的。
+
+
+2.String(变量/常量);
+
+3.拼接字符串 两边有一个字符串即可
+
+4.prompt()输出 不管用户输出什么 都以字符串处理
+
+
+2.转换为number
+Number(变量/常量);
+ 原始值    | 转换后的值                                                   |
+| --------- | ------------------------------------------------------------ |
+| 字符串    | （1）字符串去掉首尾空格后，剩余字符串的内容如果是纯数字，则直接将其转换为数字。
+（2）字符串去掉首尾空格后，剩余字符串包的内容只要含了其他非数字的内容（`小数点`按数字来算），则转换为 NaN。
+怎么理解这里的 **NaN** 呢？可以这样理解，使用 Number() 函数之后，**如果无法转换为数字，就会转换为 NaN**。
+（3）如果字符串是一个**空串**或者是一个**全是空格**的字符串，则转换为 0。<br/> |
+| 布尔值    | true 转成 1；false 转成 0                                    |
+| undefined | NaN                                                          |
+| null      | 0                                                            |
+
+运算符 +
+**字符串 + 其他数据类型 = 字符串**
+**Boolean + 数字 = 数字**
+任何值和 **NaN** 运算的结果都是 NaN。
+
+隐式类型转换——运算符：`-`、`*`、`/`、`%`
+
+正负号 `+a`、`-a`  任何数在正负号运算时调用的都是nubmer
+
+parseInt()函数：字符串 -> 整数
+var a = 168.23;
+console.log(parseInt(a)); //打印结果：168  （因为是先将 a 转为字符串"168.23"，然后然后再操作）
+其他类型的输出全是NaN
+**只保留字符串最开头的数字**，后面的中文自动消失
+console.log(parseInt('2017在公众号上写了6篇文章')); //打印结果：2017
+console.log(parseInt('2017.01在公众号上写了6篇文章')); //打印结果仍是：2017   （说明只会取整数）
+console.log(parseInt('aaa2017.01在公众号上写了6篇文章')); //打印结果：NaN （因为不是以数字开头）
+
+自动截断小数：**取整，不四舍五入**。
+var a = parseInt(5.8) + parseInt(4.7);
+console.log(a); 9
+
+
+
+var a = parseInt(5.8 + 4.7);
+console.log(a); 10
+
+带两个参数时，表示在转换时，包含了进制转换。
+var a = '110';
+var num = parseInt(a, 16); // 【重要】将 a 当成 十六进制 来看待，转换成 十进制 的 num
+console.log(num);272
+
+parseFloat()函数：字符串 --> 浮点数（小数）
+
+Boolean()
+   字符串/ 空串的结果时FALSE  其他都是TRUE
+   数字 / 0 NaN的结果时FALSE 其他都是TRUE
+   undefined/ false
+   NUll/ false
+   对象 引用类型的数据会转换为TRUE
+
+
+   const result1 = '';
+   const result2 = { a: 'data1', b: 'data2' };
+   // 逻辑判断
+   if (result1) {
+       console.log('因为 result1的内容为空，所以代码进不了这里');
+   }
+   // 逻辑运算
+   if (result2 && result2.a) {
+       // 接口返回了 result2，且 result2.a 里面有值，前端才做进一步的事情
+       console.log('代码能进来，前端继续在这里干活儿');
+   }
+   ```
+   这里再次强调一下，空数组`[]`和空对象`{}`转换为 Boolean 值时，转换结果为 true。
+
+1.隐式类型转换：逻辑运算
+const a = 1;
+console.log(a == true); // 打印结果：true
+console.log(typeof a); // 打印结果：number。可见，上面一行代码里，a 做了隐式类型转换，但是 a 的数据类型并没有发生变化，仍然是 Number 类型
+console.log(0 == true); // 打印结果：false
+
+2.使用 `!!`
+使用 `!!`可以显式转换为 Boolean 类型。比如 `!!3`的结果是 true。
+
+isNaN(参数)
+（1）先调用Number(参数)函数；
+
+（2）然后判断Number(参数)的返回结果是否为数值。如果不为数字，则返回结果为 true；如果为数字，则返回结果为 false。
+
+代码举例：
+
+console.log(isNaN('123')); // 返回结果：false。
+console.log(isNaN(null)); // 返回结果：false
+console.log(isNaN('abc')); // 返回结果：true。因为 Number('abc') 的返回结果是 NaN
+console.log(isNaN(undefined)); // 返回结果：true
+console.log(isNaN(NaN)); // 返回结果：true

@@ -1,0 +1,39 @@
+1.创造 new
+
+const person  = new Obj();
+向对象中加属性
+person.name = 'tzc',
+person.age = 21,
+person.nickname  = 'orange';
+
+
+这里如果输出一个没有的值 会显示undefined 不会报错
+console.log(person.salary)    undefined
+
+
+2. 使用[]来操作属性  如果创造的对象命名不符合命名规范
+例如  person.123 = 456;
+这样会报错
+可以用 person['123'] = 345;
+
+当一个属性如果是变量 要利用[]调用
+const person = {
+    name : 'tzc',
+    age : 21,
+}
+const son  = 'name';
+console.log(person.son);   // undefined
+console.log(person[son]); // tzc
+
+3.
+in 判断是否有指定对象
+'name' in person  true or false
+
+4.for of 遍历数组
+let arr = [1,2,3,4]
+
+for(let value of arr){
+    console.log(value);
+}
+用 for of 遍历的数组的值   如果用for in 获得是index 索引的值
+

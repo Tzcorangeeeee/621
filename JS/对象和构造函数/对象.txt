@@ -1,0 +1,89 @@
+对象创造的几种方法
+
+1. 直接创造
+const A = {
+    name='tzc',
+    age=21;
+}
+
+
+可以嵌套对象
+const A = {
+    name='tzc',
+    age=21,
+
+    B:{
+    name = 'cat',
+    age = 22，
+    }
+    还可以嵌套函数
+    sayName:function(){
+        console.log(this.name);
+    }
+}
+console.log(A);
+A.SayName();
+
+
+3.利用构造函数来创造对象
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+instanceof  bool属性 可以查看对象和函数 是否是一类
+
+添加属性：
+const obj = new Object();
+obj.name= ..
+obj,age = ..   对象.属性
+
+
+如果命名不是按照规范标准
+如 obj.123=355;
+可以使用[]
+obj['123']=789;
+
+delete 删除属性
+delete obj.name;
+
+in检查对象中是否有该属性
+console.log('name in obj');   bool
+
+判断if
+if (obj.name){}  如果有obj.name这个属性 就。。
+
+for of 遍历数组   也可以遍历map对象
+例
+let arr = [2,4,6,8]
+
+for(let value of arr){
+    console.log(value);
+}
+
+for  in  遍历
+用 for in 遍历数组 则得到的是数组的索引值
+for in 主要用来遍历对象
+
+

@@ -1,0 +1,107 @@
+1.执行期上下文 在函数执行时  会创建一个执行期上下文 执行期上下文 定义了一个函数的执行环境
+每调用一次函数  就会产生一个 都是独一无二的 在函数执行完毕后销毁
+
+
+this 指向
+解析器 在调用一个函数的时候 会向其内部传入一个隐含的参数 这个参数就是this  this指向一个对象 这个对象就是上下文对象
+
+1.以函数调用时 this 永远指向window 如 fun(); 指向的是window.fun();
+2.以方法的调用时 指向这个方法的对象
+3.以构造函数调用 指向实例对象
+4.以时间绑定函数调用 指向绑定事件的对象
+5.使用call 和 apply 调用时 指向指定的对象
+
+1.当用函数调用的时候 this 指向的永远是window 就是全局属性的
+例：
+function fun1(){
+    console.log(this);
+    console.log(this.name);
+}
+var obj1 = {
+    name : 'tzc',
+    age : 28,
+}
+var obj2 = {
+    name : 'czt',
+    age : 28,
+}
+new name = 'orange';
+fun1();      这里调用的fun1()就是orange 因为当函数调用时this指向的是window
+
+2.以方法的调用时 指向这个方法的对象
+function fun1(){
+    console.log(this);
+    console.log(this.name);
+}
+var obj1 = {
+    name:'tzc',
+    sayName : fun1,
+    age : 28,
+};
+var obj2 = {
+    name : 'czt',
+    sayName : fun1,
+    age : 28,
+};
+var name = 'orange';
+obj1.sayName();   这里会输出tzc this是obj
+sayName 是控制name输出的  如果这里用obj.name 会直接报错 因为name是一个字符串的形式 字符串只有函数能调用
+所以这里要用sayName来调用fun1 来输出
+
+3.以构造函数调用 指向实例对象
+当我们 用new 创建一个对象来 调用函数 那么就是构造函数
+
+
+
+
+
+
+call()
+1.可以调用函数   xxx.call() 和普通调用没什么区别
+2.可以改变this指向(指向，数据,数据)；
+3.可以继承
+
+function Father(name,age){
+    this.age = 30;
+    this.name = '大海';
+    console.log(this);
+}
+function Son(name,age){
+    Father.call(this,name,age);
+}
+Father.call();
+直接调用 输出window
+Son.call()这里也是window 说明call可以继承
+var info = {
+    name : 'tzc',
+    age : 29,
+}
+function change(a,b){
+    console.log(this);
+    console.log(info.name);
+    console.log(info.age);
+    console.log(a+b);
+}
+change.call(null,2,3);
+change.call(info,2,3);
+这里 上面this 为 window
+下面 为 object
+
+
+apply() 也可以调用函数 和call基本差不多  不过他需要传递数组
+function Father(myName, myAge) {
+    this.name = myName;
+    this.age = myAge;
+}
+function Son(name , age){
+    Father.apply(this, [name,age]);
+}
+var son = new Son('tzc',18);
+console.log(son.name);
+console.log(son.age);
+
+可以通过apply和 Math.max() 进行求最大值
+const arr1 = [1,3,5,8,,10]
+
+
+3.bind() 只会改变this 一般用的多

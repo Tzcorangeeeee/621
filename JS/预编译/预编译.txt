@@ -1,0 +1,24 @@
+JS编译三部曲
+语法分析
+预编译
+执行
+
+两个规律
+1.任何变量 如果没声明就赋值  他属于window属性 而且不会做变量提升
+2.一切声明的全局变量 都是window属性
+
+由此看出 window属性 代表了全局作用域  仅代表
+例
+function give(){
+    var a = b = 100;
+}
+
+console.log(b);  100
+console.log(window.b); 100
+console.log(a); undefined
+console.log(window.a); error
+这里var a = b = 100的执行顺序是
+1.100的值赋给b   2.声明a 3.把b的值赋给a
+这里 b没声明就赋值了 所以他属于window属性
+这里a 有var 所以是undefined
+但是a的作用域只在 give 里面 

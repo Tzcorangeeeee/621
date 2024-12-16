@@ -1,0 +1,85 @@
+代码快{}
+{
+    var a = 1
+    alert(hahha)
+    console.log(hahahha)
+}
+   console.lo(a)  1
+   虽然a在代码快里 但是可以调用
+
+
+switch
+
+const a = 6;
+
+switch(a){
+    case 1:
+    console.log(111);
+    break;
+    .
+    .
+
+    .
+    .
+    case 6:
+    console.log(666)
+    break;
+
+    default:
+    console.log(???)
+    break;
+}
+
+break  停止并推出Switch
+case 的判断逻辑是===
+
+case 穿透 如果不用break就会出现break穿透
+例如
+
+const a = 5
+
+switch(a){
+    case 1:
+    console.log(不对)
+    break;
+    。
+    。
+    .
+    .
+    .
+    case 5:
+    console.log(对)；
+    但这里没有break
+
+    case 6;
+    console.log(对)
+
+    case 7:
+    console.log(对)
+
+    default:
+    console.log(不不不)
+}
+
+输出结果为
+对
+对
+对
+不不不
+如果是对区间进行判断，则建议用 if。如果是对几个固定的值进行判断，那么，数量少的话用 if，数量多的话用switch。
+
+label 的使用
+outer: for (let i = 0; i < 5; i++) {
+    console.log('外层循环 i 的值：' + i);
+    for (let j = 0; j < 5; j++) {
+        break outer; // 直接跳出outer所在的外层循环（这个outer是我自定义的label）
+        console.log('内层循环 j 的值:' + j);
+    }
+}
+
+continue：只能用在循环语句 不能用在if语句。用来跳过当前循环 继续下一次循环
+默认在最近的循环起作用
+可以使用label
+
+
+flag标志位，来保存当前的数的状态

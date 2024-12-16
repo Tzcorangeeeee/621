@@ -1,0 +1,85 @@
+数组 使用数字作为索引来操作元素 从0开始
+开发中经常使用数组来存放数据（尤其是列表）
+
+1.数组的创建
+1.字面量构建
+let arr = [];空数组
+let arr = [1,2,3]带初始值的数组
+
+2.构造函数创建
+let arr = new Array(参数)
+let arr = Array
+参数：1.参数为空：一个空的数组 2.一个数字：参数的长度 3.多个参数：数组内的元素
+
+2.数组中可以放任意类型的数据 ： 字符串 布尔值 数字 对象。。。
+甚至可以在数组里面放数组；
+索引：数组元素的序号 从0开始
+
+如果索引超出数组则返回undefined
+
+修改数组的元素长度
+1.如果修改后的元素超出原来的元素那么多出来为null
+2.如果少于原来的则多出来的会被删掉；
+
+const arr1 = [11,22,33]
+const arr1 = [11,33,55]
+
+arr1.length = 1;
+console.log(JSON.stringify(arr1));  [11]
+
+arr2.length = 5;
+console.log(JSON.stringify(arr5));[11,33,55,null,null]
+
+遍历数组 ：  把数组的每个元素从头到尾访问一遍
+
+const arr = [11,22,33,44,55,66,77]
+
+for(var i = 0;i<=arr.length;i++)
+{
+    console.log(arr[i])
+}
+
+
+数组的解构赋值：
+const arr = [1, 2, [3,4]];
+let a = arr[0]; // 1
+let b = arr[1]; // 2
+let c = arr[2]; // [3, 4]
+
+let [a, b, c] = [1, 2, [3, 4]];
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // [3, 4]
+（1）等号左边的个数和格式，必须和右边的一模一样，才能完全解构。
+（2）当然，左边的个数和右边的个数，可以不一样。
+
+默认值 在赋值之前 我们可以给左边的变量指定默认值
+let [a, b = 3, c = 4] = [1, 2];
+console.log(a); // 1
+console.log(b); // 2。默认值被覆盖。
+console.log(c); // 4。继续保持默认值。
+
+let [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
+
+翻转数组
+const arr = [11,22,33,44,55]
+const emptyArr = []
+for(var i = 0;i<arr.length;i++)
+{
+    emptyArr[]=arr[arr.length-i-1]
+}
+console.log(JSON.stringify(emptyArr));
+
+冒泡排序
+const arr = [11,55,33,22,44,77,66]
+for(var i = 0; i<arr.length-1; i++){
+    for(var j = 0; j<arr.length-i-1; j++){
+        if(arr[j]>arr[j+1]){
+            let temp = arr[j];
+            a[j] = arr[j+1];
+            arr[j+1] = temp;
+        }
+    }
+}

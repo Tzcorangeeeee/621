@@ -1,0 +1,120 @@
+注意： 字符串的所有方法都不会改变原字符串 操作完会返回一个新的值
+
+1.indexOf() 和 lastIndexOf()查找字符串
+索引值 = str.indexOf()
+可以用来检测是否有该字符串 如果有返回第一次的索引值 没有则返回-1
+
+const str = 'abcdefg'
+console.log(str.indexOf(a)); 0
+console.log(str.lastIndexOf(a)); 5
+
+console.log(str.indexOf(c));2
+console.log(str.lastIndexOf(c));4
+
+indexOf('a' , 2);  (查找的字符串/起始位置)
+
+如果要查找一个字符串中的所有xx的次数和位置
+思路 先找出第一个位置的xx
+然后 只要indexOf()的返回值不是-1 那就一直查
+因为 indexOf()d的值只能查到第一个 那么之后的值我们可以通过前面的值 索引数+1继续查找
+例如 要查找a出现的次数和位置
+var str = 'tianzichengtianzicheng';
+var index = str.indexOf(str);
+var n=0;
+while(index!=-1){
+    console.log(index);
+    n++;
+    index = str.indexOf('a' , index+1);
+}
+console.log('出现的次数为' + n);
+
+2. search()
+var str = 'tianzicheng'
+
+console.log('zi');  4
+console.log(name.search(/xi/i)); 4 正则表达式
+
+3.includes()
+const name = 'tianzicheng'
+console.log(includes('zi'))  true
+console.log(includes('qqq')) falsde
+console.log(includes('zi',4)) true
+
+4.startWith() 是否以其开头(内容，位置)
+const name = 'abcd'
+console.log(starWith('a')) true
+console.log(includes('a',1)) false 因为位置是1 从b开始查bcd
+
+5.endWith()是否以其为结尾
+const name = 'abcdefg'
+console.log(includes('c',3)); true因为截至位置是d 所以是abc
+
+获得指定位置的字符
+1.charAt(index) / str[index]
+两者都是一样的字符串的第一个下标为零  如果一个参数不在 0到strin.length 里面 则返回一个空字符串
+var str = 'tianzicheng'
+for(var i = 0; i<str.length;i++){
+    console.log(str.At(i))
+} t i a n ...
+
+2.charCodeAt(index) 输出Unicode编码
+
+字符串截取
+1.slice(开始索引,结束索引)  包左不包右
+(2,5) 第二个开始 包左不包右
+(2 ) 第二个开始 一直到最后
+(-3) 从倒数第三个开始 一直到最后
+(1,-1) 第一个开始到倒数第一个
+(5,2) 大的在前面 返回值为空
+
+
+2.substring(开始，结束)
+与slice 相似 但是 substring不能接受负值 如果有默认为0
+如果大的在前面 自动转换位置
+
+3.substr(开始 ， 截取长度)
+(2,4) 从第二个开始 截取四个字符
+(2) 第二个开始截到最后
+(-3) 从倒数第三个开始截取到最后
+
+字符串转换为数组 ：
+1.split()
+str.split()
+
+var str='t,z,c,c,q';
+var sp =str.split(',');
+console.log(sp);  tzccq
+
+var str3 = '千古壹号|qianguyihao|许嵩';
+console.log('结果1：' +str3.split()); // 无参数，表示：把整个字符串作为一个元素添加到数组中。
+console.log(str3.split('')); // 参数为空字符串，则表示：分隔字符串中每一个字符，分别添加到数组中
+console.log(str3.split('|')); // 参数为指定字符，表示：用 '|' 分隔字符串。此分隔符将不会出现在数组的任意一个元素中
+console.log(str3.split('许')); // 同上
+
+2.replace(被替换的，新的)
+这个方法只会替换第一个匹配到的字符 如果要提替换全部需要用到正则
+var str2 = 'Today is fine day,today is fine day !';
+console.log(str2);
+console.log(str2.replace('today', 'tomorrow')); //只能替换第一个today
+console.log(str2.replace(/today/gi, 'tomorrow')); //这里用到了正则，才能替换所有的today
+
+repeat()重复
+str.repeat
+const name = 'tzc'
+console.log(name.repeat)tzctzc
+
+const telephone = '13088889999';
+const mix_telephone = telephone.slice(0, -4) + '*'.repeat(4); // 模糊电话号码的后四位
+console.log(telephone); // 打印结果：13088889999
+console.log(mix_telephone); // 打印结果：1308888****
+
+trim() 去除字符串两端空格
+
+大小写转换
+var str = 'abcdEFG';
+
+//转换成小写
+console.log(str.toLowerCase());
+
+//转换成大写
+console.log(str.toUpperCase());

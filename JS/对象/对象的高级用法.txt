@@ -1,0 +1,6 @@
+1xxx.hasOwnProperty(x);
+bool值 判断是否有对象
+
+
+2.Object.freeze();
+冻结一个属性 冻结后就不能修改了

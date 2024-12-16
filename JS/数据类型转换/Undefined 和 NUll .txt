@@ -1,0 +1,28 @@
+如果一个值没有初始化 没有赋值 则为undefined
+
+我们在定义一个变量的时候 尽量初始化（赋值）
+如果变量开始没有值 那么我们可以额将其附一个默认值如 NULL 0 false ''(空字符串)
+
+如果一个函数的返回值 那返回值就是undefined
+
+调用函数没有传参时 也是undefined
+function foo(name) {
+    console.log(name);
+}
+
+foo(); // 调用函数时，未传参。执行函数后的打印结果：undefined
+
+NULL 空对象
+undefined 实际上是由 null 衍生出来的，所以null == undefined的结果为 true。
+
+但是 null === undefined 的结果是 false。它们虽然相似，但还是有区别的，其中一个区别是，和数字运算时：
+
+10 + null 结果为 10。
+
+10 + undefined 结果为 NaN。
+
+规律总结：
+
+任何值和 null 运算，null 可看做 0 运算。
+
+任何数据类型和 undefined 运算都是 NaN。

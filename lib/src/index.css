@@ -1,0 +1,157 @@
+.mingpian{
+    width: 300px;
+    height:600px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.background{
+    width: 300px;
+    height: 150px;
+    background-color: #eeeeee;
+}
+.mingpian .background img{
+    width: 300px;
+    height: 150px;
+    position: relative;
+}
+.mingpian .background img:hover{
+    cursor: pointer;
+}
+.touxiang{
+    width: 300px;
+    height: 100px;
+}
+.touxiang:hover{
+    cursor: pointer;
+}
+.mingpian .touxiang img{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 100px;
+    left: 30px;
+    border-radius: 50px;
+    border: 3px solid white;
+}
+.mingpian .touxiang p{
+    position: absolute;
+    top:130px;
+    left: 30px;
+    font-size: 50px;
+}
+.tubiao{
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    left: 40px;
+    font-size: 15px;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.ttf?t=1733477581952') format('truetype');
+}
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 30px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+}
+.iconfont1 {
+    font-family: "iconfont" !important;
+    font-size: 30px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    left: 100px;
+}
+.iconfont2 {
+    font-family: "iconfont" !important;
+    font-size: 35px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    left: 200px;
+}
+.tubiao1{
+    float: left;
+    position: absolute;
+    top: 30px;
+}
+.tubiao2{
+    float: left;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+}
+.tubiao3{
+    float: left;
+    position: absolute;
+    top: 30px;
+    left: 200px;
+}
+.mingpian .tubiao ul{
+    display: block;
+    list-style: none;
+}
+.mingpian .tubiao li{
+    display: block;
+    word-spacing: 20px;
+    float: left;
+    font-size: 30px;
+}
+
+.information{
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    top: 300px;
+}
+.mingpian .information ul{
+    list-style: none;
+    position: relative;
+}
+.mingpian .information ul li{
+    font-size: 15px;
+    line-height: 60px;
+}
+.mingpian .information1{
+    position: absolute;
+    top: 300px;
+    left: 130px;
+}
+.mingpian .information1 ul{
+    list-style: none;
+    position: relative;
+}
+.mingpian .information1 ul li{
+    font-size: 15px;
+    line-height: 60px;
+}
+.more{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    position: absolute;
+    font-size: 30px;
+    top: 550px;
+}
+.item{
+    width: 30%;
+    background-color: #e1dede;
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    border-radius: 12px;
+}
+.item span:first-child{
+    font-size: 40px;
+}

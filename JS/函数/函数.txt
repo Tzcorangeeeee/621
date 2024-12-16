@@ -1,0 +1,102 @@
+1.函数的定义
+
+1.用函数声明创造一个函数
+function 函数名(形参1，2，3){
+    。。。。。
+}
+
+2.用函数表达式创造一个函数
+const 变量名 = function(){
+    ......
+}
+
+3.使用构造函数 new function()
+
+
+函数的调用方法()
+1.函数名（）
+2.函数名.call()
+
+2.通过对象的方式调用
+obj.xxx()
+如果一个函数是作为一个对象的属性保存，那么，我们称这个函数是这个对象的方法。
+
+3.立即执行函数
+(function(){
+    xxxx
+});
+
+绑定事件函数：
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+<button id="button">按钮</button>
+
+<script src="函数.js">
+  var button = document.getElementById("button");
+
+  button.onclick = function(){
+    alert("Butoon was clicked!");
+  }
+</script>
+</body>
+</html>
+
+
+函数的形参和实参
+function add(a,b){
+    sum=a+b;
+    return sum;
+}
+add(1,2)
+console.log(sum);
+这里 a和b就是形参 是待定的  1和2是实参给里面传数据
+形参和实参个数
+如果实参多余形参 那么多余的值不会被赋值
+如果实参少于形参 那么会显示NaN
+
+函数名 == 整个函数
+console.log(fn) == console.log(function fn(){alert(1)});
+//定义fn方法
+function fn(){
+	alert(1)
+};
+fn()：调用函数。调用之后，还获取了函数的返回值。
+fn：函数对象。相当于直接获取了整个函数对象。
+如果直接是fn()，那就说明是函数调用。如果是XX.fn()的这种形式，那就说明是方法调用。
+只是名称上的不同 实际上没有什么不同
+
+
+arguments 类数组对象 他储存的是接收到的实参列表  所有函数都内置了一个arguments
+arguments 是一个伪数组 有length 可以通过索引 来访问某个实参
+但是不能用数组的方法
+fn(2, 4);
+fn(2, 4, 6);
+fn(2, 4, 6, 8);
+function fn(a, b) {
+    console.log(arguments);
+    console.log(fn.length); //获取形参的个数
+    console.log(arguments.length); //获取实参的个数
+}
+Arguments(0:2,1:4)...
+2
+2
+...
+2
+3
+...
+2
+4
+
+
+arguments.length  返回实参的个数
+arguments.callee 是一个指向当前正在执行的函数的引用
+
+可以利用arguments[0]=11;来修改数值
+
+利用arguments求最大值:
