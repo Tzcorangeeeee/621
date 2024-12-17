@@ -1,3 +1,4 @@
+/*
 .box{
     width:300px;
     height:300px;
@@ -9,4 +10,11 @@
     width:300px;
     height:100px;
     font-size: 32px;
+}*/
+
+img{
+    width:300px;
+    height:300px;
+    margin-top: 200px;
+    margin-left:400px;
 }

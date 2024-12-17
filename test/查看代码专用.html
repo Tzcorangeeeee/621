@@ -1,70 +1,43 @@
-
 <!DOCTYPE html>
 <html>
-
 <head lang="en">
     <meta charset="UTF-8">
-    <title>background-size</title>
-    <style type="text/css">
-        a {
-            text-decoration: none;
-        }
-
-        ul {
-            list-style: none;
-        }
-
+    <title></title>
+    <style>
         div {
-            background-image: url("http://img1.sycdn.imooc.com/climg//582c37e50001b08102000065.jpg");
             width: 100px;
             height: 100px;
-            display: none;
-            border: 2px solid red;
-            background-repeat: no-repeat;
-        }
-
-        .length:hover div {
-            background-size: 100px 100px;
-            display: block;
-        }
-
-        .percent:hover div {
-            background-size: 50% 50%;
-            display: block;
-        }
-
-        .cover:hover div {
-            background-size: cover;
-            display: block;
-        }
-
-        .contain:hover div {
-            background-size: contain;
-            display: block;
+            background-color: pink;
+            position: absolute;
         }
     </style>
 </head>
-
 <body>
-<h2>background-size不同属性值不同效果</h2>
-<ul>
-    <li class="length">
-        <h3><a href="">100px 100px</a></h3>
-        <div></div>
-    </li>
-    <li class="percent">
-        <h3><a href="">50% 50%</a></h3>
-        <div></div>
-    </li>
-    <li class="cover">
-        <h3><a href="">cover</a></h3>
-        <div></div>
-    </li>
-    <li class="contain">
-        <h3><a href="">contain</a></h3>
-        <div></div>
-    </li>
-</ul>
-</body>
+<button>动画</button>
+<div class="box" style="left: 0px"></div>
 
+<script>
+    var btn = document.getElementsByTagName("button")[0];
+    var div = document.getElementsByTagName("div")[0];
+
+    //1、闪动
+    //    btn.onclick = function () {
+    //        div.style.left = "500px";
+    //    }
+
+    //2、匀速运动
+    btn.onclick = function () {
+        //定时器，每隔一定的时间向右走一些
+        setInterval(function () {
+            console.log(parseInt(div.style.left));
+            //动画原理： 盒子未来的位置 = 盒子现在的位置 + 步长；
+            //方法1：用offsetLeft获取值，用style.left赋值。
+            div.style.left = div.offsetLeft + 100 + 'px';
+
+            // 方法2：必须一开始就在DOM节点上添加 style="left: 0px;"属性，才能用方法2。否则， div.style.left 的值为 NaN
+            // div.style.left = parseInt(div.style.left)+100+"px";  //方法2：
+        }, 500);
+    };
+</script>
+</body>
 </html>

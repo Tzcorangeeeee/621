@@ -1,0 +1,31 @@
+                                       JS动画
+    1.三大家族和一个事件对象offset / scroll / client    event
+    2.动画 (闪现/匀速/缓动)
+    3.冒泡/兼容/封装
+
+                                      offset
+    1.offset 偏移 补偿 位移
+    用来获得元素尺寸的方法
+    1.offsetWidth
+    2.offsetHeight
+    3.offsetTop
+    4.offsetLeft
+    5.offsetParent
+
+    1.offsetWidth和offsetHeight获得元素的宽高+padding+border 不包括margin
+        1.offsetWidth = width + padding +border
+        2.offsetHeight = height + padding +border   typeof ： number
+
+    2.offsetParent 获得当前元素父元素的位置
+        1.如果当前元素的父元素有定位 position那么就会获得父元素的定位
+        2.如果没有 那么获得body
+
+    3.offsetLeft和offsetTop 获得元素定位父元素的水平/垂直偏移量 从父亲的padding开始算
+        1.offsetLeft和style.left区别
+            1.如果offsetLeft没有定位父元素 则返回body
+            2.style.left如果没有 返回""
+            3.offsetLeft和offsetTop只读  style.top赋值
+
+
+
+

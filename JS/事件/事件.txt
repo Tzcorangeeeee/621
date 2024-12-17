@@ -1,0 +1,20 @@
+3种
+
+1. let bt = document.getElementById("Btn")
+   bt.onlick = function(){
+   alert('')
+   }
+
+2. let bt = document.getElementById("Btn")
+    bt = fn;
+    function  fn()={
+    alert('')
+    }
+
+3.行内绑定
+    <div id = xxx onclick='fn()'></div>
+    <script>
+    function fn()={
+
+    }
+    </script>
